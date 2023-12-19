@@ -37,8 +37,8 @@ export default function FillForm(props) {
   const [textareaColor, setTextareaColor] = useState('black');
 
   return (
-    <div>
-        <div className="mb-3 p-5">
+    <>
+        <div className="mb-3 p-5 container">
             <h1><label htmlFor="text_input_field" className="form-label">{props.heading}</label></h1>
             <textarea style={{ color: textareaColor}} placeholder='Enter the text here......' onChange={handleOnChange} className="form-control" value={text} id="text_input_field" rows="10"></textarea>
             <div className="flexbox_row_align">
@@ -48,6 +48,11 @@ export default function FillForm(props) {
               <button onClick={handleClearAllClick}className={`btn btn-danger m-2`}>Clear All</button>
             </div>
         </div>
-    </div>
+        <div className="mb-3 p-5 container">
+            <h3>Paragraph Summary</h3>
+            <p class="p-1" style={{color:textareaColor}}>No of words: <strong>{text.length===0?0:text.split(" ").length-1}</strong></p>
+            <p class="p-1" style={{color:textareaColor}}>No of Characters: <strong>{text.length}</strong></p>
+        </div>
+    </>
   )
 }

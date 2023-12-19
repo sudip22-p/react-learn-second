@@ -1,5 +1,6 @@
 // import logo from './logo.svg';
 import './App.css';
+import FillForm from './components/FillForm';
 import Navbar from './components/Navbar';
 
 // let xyz="i have a";
@@ -37,7 +38,10 @@ function App() {
         <h1>{xyz} CAR</h1>
         <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odit unde cumque delectus nulla deleniti adipisci fugit distinctio exercitationem, cum doloribus labore magnam laborum non commodi dignissimos sapiente eum repellendus maxime repellat blanditiis.</p>
       </div> */}
-    <Navbar title="TextCounts-2001"/>
+    <Navbar title="TextDecors-2024"/>
+    <div className="container">
+    <FillForm heading="Enter the text below:"/>
+    </div>
     </>
   );
 }

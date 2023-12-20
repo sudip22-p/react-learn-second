@@ -2,6 +2,7 @@
 import './App.css';
 import FillForm from './components/FillForm';
 import Navbar from './components/Navbar';
+import About from './components/About';
 
 // let xyz="i have a";
 function App() {
@@ -40,7 +41,8 @@ function App() {
       </div> */}
     <Navbar title="TextDecors-2024"/>
     <div className="container">
-    <FillForm heading="Enter the text below:"/>
+        <FillForm heading="Enter the text below:"/>
+        <About/>
     </div>
     </>
   );

@@ -7,7 +7,7 @@ export default function About() {
     {
       color:'black',
       backgroundColor:'white',
-      border:'1px solid white',
+      border:'1px solid black',
     }
   );
   let toggleStyle=()=>{

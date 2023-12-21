@@ -48,10 +48,10 @@ export default function FillForm(props) {
               <button onClick={handleClearAllClick}className={`btn btn-danger m-2`}>Clear All</button>
             </div>
         </div>
-        <div className="mb-3 p-5 container">
+        <div className="mb-3 p-5 container" style={{backgroundColor:"white",color:"black"}}>
             <h3>Paragraph Summary</h3>
-            <p class="p-1" style={{color:textareaColor}}>No of words: <strong>{text.length===0?0:text.split(" ").length-1}</strong></p>
-            <p class="p-1" style={{color:textareaColor}}>No of Characters: <strong>{text.length}</strong></p>
+            <p className="p-1" style={{color:textareaColor}}>No of words: <strong>{text.length===0?0:text.split(" ").length-1}</strong></p>
+            <p className="p-1" style={{color:textareaColor}}>No of Characters: <strong>{text.length}</strong></p>
         </div>
     </>
   )

@@ -4,19 +4,34 @@ import FillForm from './components/FillForm';
 import Navbar from './components/Navbar';
 import About from './components/About';
 import { useState } from 'react';
+import Alert from './components/Alert';
 
 // let xyz="i have a";
 function App() {
   const [mode,setMode]=useState('dark');//for controlling dark and light mode
+  const [alert,setAlert]=useState(null);
+  const showAlert=(message,type)=>{
+    setAlert(
+      {
+        message:message,
+        type:type,
+      }
+    );
+    setTimeout(()=>{
+      setAlert(null);
+    },1500);
+  }
   const toggleModeFunction=()=>{
     if(mode==='light'){
       setMode('dark');
       document.body.style.backgroundColor='#212529';
       document.body.style.color='white';
+      showAlert('Dark Mode has been enabled!','Success');
     }else{
       setMode('light');
       document.body.style.backgroundColor='white';
       document.body.style.color='black';
+      showAlert('Light Mode has been enabled!','Success');
     }
   }
   return (
@@ -54,8 +69,9 @@ function App() {
       </div> */}
     <div style={{backgroundColor: mode === 'light' ? "white" : "#212529", color: mode === 'light' ? "black" : "white"}}>
       <Navbar title="TextDecors-2024" modeStatus={mode} toggleMode={toggleModeFunction}/>{/*passing props whether the dark mode is enabled or not.*/}
+      <Alert alert={alert}/>
       <div className="container">
-          <FillForm heading="Enter the text below:"/>
+          <FillForm showAlert={showAlert} heading="Enter the text below:"/>
           <About/>
       </div>
     </div>

@@ -11,22 +11,26 @@ export default function FillForm(props) {
   const colors = Array.from({ length: 100 }, generateRandomColor);
   const handleUpClick = ()=>{
     setText(text.toUpperCase());
+    props.showAlert('Text succesfully converted to uppercase!','Success');
   }
-
-
+  
+  
   const handleLowClick=()=>{
     setText(text.toLowerCase());
+    props.showAlert('Text succesfully converted to lowercase!','Success');
   }
 
-
+  
   const handleColorChangeClick=()=>{
     let randomNumber = Math.floor(Math.random() * 100);
     let selectedColor=colors[randomNumber];
     setTextareaColor(selectedColor);
+    props.showAlert('Text color succesfully changed!','Success');
   }
-
+  
   const handleClearAllClick=()=>{
     setText("");
+    props.showAlert('All text cleared succesfully!','Success');
   }
 
   const handleOnChange=(event)=>{
